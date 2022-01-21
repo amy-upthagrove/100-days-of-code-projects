@@ -1,0 +1,10 @@
+loop do
+  with_fx :reverb, pre_mix: 0.75, damp: 1 do
+    with_fx :ping_pong, mix: 0.1 do
+      with_fx :wobble, mix: rrand(0.2, 1) do
+        sample :perc_bell, rate: rrand(0.01, 3)
+        sleep rrand(0.2, 6)
+      end
+    end
+  end
+end
